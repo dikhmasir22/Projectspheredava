@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dava Sphere</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dava_style.css') }}">
+
+</head>
+
+<body>
+    <section class="hero is-dark">
+        <div class="hero-body has-text-centered tengah" style="padding-bottom: 1rem; margin: auto;">
+            <div class="kotak">
+                 <img src="{{ url_for('static', filename='logoDavacom.png') }}" width="150" alt="">
+            </div>
+           
+            <h1 class="title is-hiyaa">DAVA SPHERE</h1>
+            <h3 class="subtitle is-hiyaa">The Dimension Of Imagination</h3>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="box" style="max-width: 480px; margin: auto;">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <div class="field has-addons">
+                                <div class="control has-icons-left" style="width: 100%;">
+                                    <input type="text" id="input-username" class="input" placeholder="id" required />
+                                    <span class="icon is-small is-left">
+                                        <i class="ri-user-fill"></i>
+                                    </span>
+                                </div>
+                                <div id="btn-check-dup" class="control is-hidden">
+                                    <button class="button is-hiyaa" onclick="check_dup()">
+                                        Check ID Kamu
+                                    </button>
+                                </div>
+                            </div>
+                            <p id="help-id" class="help is-hidden has-text-white">
+                                Untuk ID, silakan ketik 2-10 huruf, Angka, atau huruf spesial (-_.)
+                            </p>
+                            <p id="help-id-login" class="help is-danger"></p>
+                            <!-- Replikasi Input Tag -->
+                            <div class="field">
+                                <div class="control has-icons-left">
+                                    <input type="password" id="input-password" class="input" placeholder="Password"
+                                        required />
+                                    <span class="icon is-small is-left">
+                                        <i class="ri-git-repository-private-fill"></i>
+                                    </span>
+                                </div>
+                                <p id="help-password" class="help is-hidden has-text-white">
+                                    Untuk Password, silakan ketik 8-20 huruf, Angka, atau huruf spesial(!@#$%^&*)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="div-sign-in-or-up" class="has-text-centered">
+                            <nav class="level is-mobile">
+                                <button onclick="sign_in()" class="level-item button is-hiyaa">
+                                    Sign In
+                                </button>
+                                <button onclick="clear_Inputan()" class="level-item button is-hiyaa">
+                                    Clear
+                                </button>
+                            </nav>
+
+                            <h4 class="mb-3 has-text-white">Belum Punya Akun? Daftar dulu yuk!</h4>
+                            <nav class="level is-mobile">
+                                <button class="level-item button is-hiyaa is-outlined" onclick="toggle_sign_up()">
+                                    Sign Up
+                                </button>
+                            </nav>
+                        </div>
+                        <div id="sign-up-box" class="is-hidden">
+                            <div class="mb-5">
+                                <div class="field">
+                                    <div class="control has-icons-left" style="width: 100%">
+                                        <input id="input-password2" class="input" type="password"
+                                            placeholder="Confirm your password" required />
+                                        <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                    </div>
+                                    <p id="help-password2" class="help is-hidden has-text-white">
+                                        Please enter in your password again
+                                    </p>
+                                </div>
+                            </div>
+                            <nav class="level is-mobile">
+                                <button class="level-item button is-hiyaa" onclick="sign_up()">
+                                    Sign Up
+                                </button>
+                                <button class="level-item button is-hiyaa is-outlined" onclick="toggle_sign_up()">
+                                    Cancel
+                                </button>
+                                <button class="level-item button is-hiyaa is-outlined" onclick="clear_Inputan()">
+                                    Clear
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="{{ url_for('static', filename='js/dava_script.js') }}"></script>
+</body>
+
+</html>
